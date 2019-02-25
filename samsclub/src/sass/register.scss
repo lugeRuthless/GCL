@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+@import "base/fontface";
+@import "utils/cleatfix";
+
+a{
+    text-decoration: none;
+}
+header{
+    background: #f8f8f8;
+    .logo{
+        width: 190px;
+        margin: 0 auto;
+        padding: 30px 0;
+        text-align: center;
+        img{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+        .title{
+            width: 100%;
+            height: 50px;
+            position: relative;
+            border-top: 2px solid  #ccc;
+            margin-top: 30px;
+            span{
+                width: 90px;
+                position: absolute;
+                background: #f8f8f8;
+                top: -12px;
+                left: 50%;
+                margin-left: -45px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+.reg{
+    text-align: center;
+    width: 440px;
+    margin: 50px auto;
+    .vip{
+        @include clear();
+        margin-bottom: 30px;
+        a{
+            width: 45%;
+            float: left;
+            border-radius: 4px;
+            position: relative;
+            padding-bottom: 30px;
+            border: 2px solid #e5e5e5;
+            background: #f8f8f8;
+            box-sizing: border-box;
+            &:first-child{
+                margin-right: 9%;
+            }
+            &:hover{
+                border:2px solid #0799c9;
+                background: #fff;
+            }
+        }
+        em{
+            margin: 30px 0 24px;
+            text-align: center;
+            display: block;
+            font-size: 40px;
+            color: #0799c9;
+        }
+        .active{
+            span{
+                display: block;
+            }   
+        }
+        span{
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #fff;
+            display: none;
+            border:1px solid #0799c9;
+            position: absolute;
+            line-height: 28px;
+            text-align: center;
+            top:-5px;
+            right: -5px;
+            i{
+                color: #0799c9;
+                font-size: 17px;
+            }
+        }
+        
+        b{
+            color: #222;
+        }
+    }
+    .vip_reg{
+        display: none;
+        select{
+            color: #aaa;
+            width: 30%;
+            height: 36px;
+            border: 1px solid #ccc;
+            outline: none;
+            border-radius: 3px;
+            &:nth-child(2){
+                margin: 0 18px;
+            }
+        }
+    }
+    #register{
+        color: #aaa;
+        font-size: 12px;
+        .reg_input{
+            text-indent: 10px;
+            width: 100%;
+            height: 36px;
+            border-radius: 2px;
+            outline: none;
+            border: 1px solid #e5e5e5;
+        }
+        p{
+            text-align: left;
+            font-size: 12px;
+            text-indent: 10px;
+            height: 32px;
+            line-height: 32px;
+        }
+        .pwd_left{
+            float: left;
+        }
+        .default_strong{
+            float: right;
+            line-height: 32px;
+            em{
+                display: inline-block;
+                width: 6px;
+                height: 12px;
+                background-color:#d0d0d0;
+                margin-left: 4px;
+                border-radius: 1px;
+            }  
+        }
+        .register_code{
+                @include clear();
+                .vali_code{
+                    float:left;
+                    width: 60%;
+                    }
+                a{
+                    text-align: center;
+                    line-height: 36px;
+                    float: right;
+                    display: inline-block;
+                    width: 35%;
+                    height: 38px;
+                    color: #ccc;
+                    background: #eee;
+                }
+        }  
+    }
+    .reg_footer{
+        color: #333;
+        input{
+            vertical-align: middle;
+        }
+    }
+    .onsubmit{
+        cursor: pointer;
+        outline: none;
+        border: none;
+        width: 220px;
+        margin: 0 auto;
+        color: #fff;
+        height: 50px;
+        line-height: 50px;
+        background: #005f9e;
+        border-radius: 3px;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 20px 0;
+    }
+}

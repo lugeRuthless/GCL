@@ -1,0 +1,39 @@
+body{
+	font-size: 12px;
+	line-height: 1.5;
+	background: #f8f8f8;
+	overflow-x: hidden;
+}
+img{
+	display: block;
+}
+ul,li,ol{
+	list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #a5c7db;
+}
+i,b,em{
+	font-style: normal;
+}
+
+.wrapper{
+	width: 1500px;
+	margin: 0 auto;
+	color: #a5c7db;
+}
+.clear{
+	@include clear;
+}
+h1,h2,h3,h4,h5{
+	text-align: center;
+}
+
+%title{
+        font-size: 18px;
+        margin: 30px 0;
+        color: #333;
+}
+
+

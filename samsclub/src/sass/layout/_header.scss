@@ -1,0 +1,231 @@
+@charset "utf-8";
+$fl:left;
+$line-height:67px;
+
+@import "../utils/trangle";
+
+.header{
+   // overflow: hidden;
+    height: $line-height;
+    background-color:#0069aa;
+    border-top:1px solid #0772b4;
+    .logo{
+        float: $fl;
+        a{
+          display: block;
+        }
+        img{
+          width: 223px;
+          height: $line-height; 
+        }
+        overflow: hidden;
+    }
+    .address{
+        height: $line-height;
+        width: 190px;
+        @include ellipsis;
+        margin-left: 20px;
+        line-height: $line-height;
+        float: $fl;
+        i{
+            margin: 0 5px;
+            color: #fff;
+        }
+        strong{
+            font-size: 14px;
+        }
+    }
+    .chgadress{       //修改地址
+        float: $fl;
+        cursor: pointer;
+        margin: 20px 10px 3px 10px;
+        width: 74px;
+        height: 24px;
+        background-color: #1a78b3;
+        text-align: center;
+        @include borderstyle(1px ,solid, #79aece);
+        span{
+            line-height: 24px;
+        }
+    }
+    .toutiao{
+        line-height: $line-height;
+        div{
+            float: $fl;
+        }
+        ul{
+            float: $fl;
+            li{
+                margin-left: 5px;
+                word-break: break-all;
+                a{
+                    @include transition(all 0.3s);
+                    &:hover{
+                        color: white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+%tag{
+    outline: none;
+    border: none;
+}
+.header_right{                //搜索框
+    float: right;
+    .search{
+        float: $fl;
+        line-height: 67px;
+        position: relative;
+        .search_news{
+            display: none;
+            padding: 18px 0 25px;
+            border: 1px solid #dcdbdc;
+            background: #fff;
+            position: absolute;
+            top: 54px;
+            left: 0;
+            background: #fff;
+            width: 350px;
+            z-index: 3000;
+            li{
+                height: 30px;
+                line-height: 30px;
+                text-indent: 20px;
+                &:nth-child(1){
+                    padding: 10px 0;
+                    font-size: 14px;
+                    color: #999;
+                }
+                a{
+                    display: block;
+                    color: #999;
+                    transition:  all 0.3s;
+                    &:hover{
+                      background: #f4f4f4;
+                    }
+                }
+            }
+        }
+        input{
+            width: 350px;
+            height: 34px;
+            color: white;
+            @extend %tag;
+            background-color: #015c92;
+            @include borderstyle(1px ,solid, #015789);
+            @include borderradius(5px);
+        }
+        button{
+            font-size: 20px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -13px;
+            background: none;
+            @extend %tag;
+        }
+    }
+    .cart{       //购物车
+        float: $fl;
+        margin-left: 35px;
+        margin-right: 10px;
+        margin-top:5px;
+        position: relative;
+        span:nth-child(1){
+            font-size: 34px;
+        }
+        span:nth-child(2){
+            font-size: 16px;
+            color: #ffc222;
+            position: absolute;
+            left: 10px;
+            top: 8px;
+        }
+    }
+}
+
+#mask{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #333, $alpha: 0.7);
+    .address{
+        padding: 100px 90px 200px;
+        position: absolute;
+        left: 50%;
+        margin-left: -500px;
+        width: 900px;
+        top: 250px;
+        background: #f7f7f7;
+        text-align: center;
+        font-size: 15px;
+        border: 1px solid #e0e0e0;
+        .contents{
+            height: 45px;
+            line-height: 45px;
+        }
+        a{
+            color: #fff;
+        }
+        .drop{
+            vertical-align: middle;
+            display: inline-block;
+            height: 45px;
+            padding: 0 25px 0 15px;
+            width: 100px;
+            @include ellipsis();
+            background: #0069aa;
+            position: relative;
+            em{
+                position: absolute;
+                right: 5px;
+                top: 20px;
+                color:  #fff;
+                @include trangle('triangleDown',10px,10px);
+            }
+        }
+        .close_btn{
+            cursor: pointer;
+            position: absolute;
+            width: 20px;
+            line-height: normal;
+            height: 20px;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #ccc;
+            &:hover{
+                color: #999;
+            }
+        }
+        input{
+            margin-left: -4px;
+            vertical-align: middle;
+            height: 15px;
+            padding: 14px 30px;
+            line-height: 15px;
+            font-size: 14px;
+            outline: none;
+            border: 1px solid #0069aa;
+            width: 400px;
+        }
+        .search{
+            display: inline-block;
+            width: 118px;
+            margin:0 6px;
+            background-color: #0069aa;
+        }
+        .add_address{
+            display: inline-block;
+            width: 118px;
+            background:#5e9732 ;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+require(['index-module','details-module','cart-module']);
