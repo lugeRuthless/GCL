@@ -1,0 +1,373 @@
+@charset "utf-8";
+
+body{
+    background: #fff;
+}
+.sitemap{
+    .details_crumb{
+        margin: 18px 0 35px;
+        a{
+            float: left;
+            color: #999;
+            .iconfont{
+                color: #999;
+            }
+            &:last-child{
+                color:#2b68a5;
+            }
+            &:hover{
+                color:#2b68a5
+            }
+        }
+    }
+}
+.details{
+    margin-bottom: 30px;
+    .detail_left{
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        .up{
+            left: 11px;
+        }
+        .down{
+            left: 40px;
+        }
+        >a{  
+            position: absolute;
+            bottom: 40px;
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+            color: #ccc;
+            &:hover{
+                color: #ababab;
+            }
+        }
+    }
+    .smallimg{
+        float: $fl;
+        width: 65px;
+        margin-right: 18px;
+        text-align: center;
+        height: 450px;
+        overflow: hidden;
+        position: relative;
+        ul{
+            position: absolute;
+            /* height: 450px; */
+           // overflow: hidden;
+        }
+        li{
+            width: 63px;
+            height: 63px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            img{
+                width: 63px;
+                height: 63px;
+            }
+        }
+        .active{
+            width: 61px;
+            height: 61px;
+            border: 2px solid #0069aa;
+            img{
+                width: 61px;
+                height: 61px;
+            }
+        }
+    }
+    .smallpic{
+        float: $fl;
+        width: 500px;
+        height: 500px;
+        position: relative;
+        .show{
+            opacity: 1!important;
+            z-index: 5;
+        }
+        .smallf{
+            position: absolute;
+           /*  top: 0;
+            left: 0; */
+            z-index: 10;
+            display: none;
+            background: #000;
+            opacity: 0.3;
+            cursor :crosshair;
+           /*  width: 100px;
+            height: 100px; */
+        }
+        .small-pics{
+            margin-right: 15px;
+            overflow: hidden;
+            img{
+                width: 500px;
+                height: 500px;
+            }
+            li{
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+            }
+        }
+    }
+    .bigf{
+        opacity: 0;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        left: 600px;
+        z-index: 20;
+        overflow: hidden;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+    }
+    .detail_right{
+        #alert{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            display: none;
+            margin-left: -135px;
+            margin-top: -105px;
+            text-align: center;
+            padding: 55px 40px;
+            background: #fff;
+            border: 1px solid #ccc;
+            button{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                border: none;
+                outline: none;
+                background: #fff;
+                font-size: 30px;
+                transition: all 0.3s;
+                cursor: pointer;
+                color: #eee;
+                &:hover{
+                    color: #ccc;
+                }
+            }
+            p{
+                line-height: 60px;
+                color: #333;
+                font-size: 16px;
+            }
+            a{
+                display: inline-block;
+                width:130px;
+                height: 35px;
+                line-height: 35px;
+                color: #333;
+                border: 1px solid #DDD;
+                border-radius: 3px;
+                margin: 0 5px;
+            }
+            .watch{
+                border-color: #004b8d;
+                background-color: #0069aa;
+                color: #FFF; 
+            }
+        }
+        float: left;
+        width: 56%;
+        box-sizing: border-box;
+        .title{
+            line-height: 22px;
+            p:first-child{
+                font-size: 16px;
+                color: #333;
+            }
+            p:last-child{
+                margin-top: 8px;
+                line-height: 18px;
+                font-size: 14px;
+                color: #666;
+            }
+        }
+        .price{
+            width: 100%;
+            height: 26px;
+            margin-top: 8px;
+            padding: 15px 0;
+            color: #999;
+            border-bottom: 1px solid #eee;
+            span:first-child{
+                display: inline-block;
+                width: 35%;
+                color: #0069aa;
+            }
+            em{
+                color: #999;
+                margin-left: 18px;
+            }
+            sub{
+                font-size:20px;
+            }
+            strong{
+                font-size: 26px;
+                height: 26px;
+                line-height: 26px;
+            }
+        }
+        .youhui{   //优惠券
+            height: 26px;
+            padding: 24px 0 15px;
+            border-bottom: 1px solid #eee;
+            >span{
+                float: left;
+                color: #999;
+                padding:0  20px;
+            }
+            .youhui_quan{
+                float: left;
+                width: 80px;
+                position: relative;
+                height: 20px;
+                line-height: 20px;
+                margin: 0 18px 0 10px;
+                font-size: 10px;
+                text-align: center;
+                padding-left: 5px;
+                color: #ff4902;
+                background-color: #fdeae2;
+                border: 1px solid #ff4902;
+                border-width: 1px 0 1px 0;
+                cursor: pointer;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    width: 10px;
+                    height: 22px;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    width: 10px;
+                    height: 22px;
+                }
+                &::after{
+                    right: -10px;
+                    visibility: visible!important;
+                    position: absolute;
+                    background: url('http://image.samsclub-estore.com/front-detail/samsclub/img/detail/pc-small-orange-right.png?1856369') no-repeat;
+                }
+                &:before{
+                    left: -10px;
+                    background: url("http://image.samsclub-estore.com/front-detail/samsclub/img/detail/pc-small-orange-left.png?1856369") no-repeat center;
+                }
+            }
+        }
+        .praise{
+            height: 22px;
+            line-height: 22px;
+            margin-top: 15px;
+            color: #666;
+        }
+        .icons{ margin-right: 10px; font-size: 20px; color: #0069aa}
+        .address{
+            >div{float: left;}
+            margin-top: 12px;
+            width: 100%;
+            float: left;
+            color: #333;
+            .address_p{
+                font-weight: bold;
+                line-height: 28px;
+                display: inline-block;
+                width: 100px;
+                height: 20px;
+                @include ellipsis();
+            }
+        }
+        .calc{
+            margin-top: 60px;
+            .numbers{
+                float: $fl;
+                height: 41px;
+                padding: 7px 9px 0;
+                border: 1px solid #ccc;
+                >div{
+                    float: $fl;
+                    width: 14px;
+                    height: 14px; 
+                    line-height: 14px;                   
+                    font-size: 12px;                    
+                    margin: 10px 6px;                   
+                    color: #0069aa;                    
+                    cursor: pointer;                   
+                    text-align: center;
+                }
+                input{
+                    width: 40px;
+                    margin-top: 5px;
+                    font-size: 16px;
+                    color: #29649c;
+                    border: 0;
+                    outline: 0;
+                    text-align: center;
+                }
+                .num{
+                    width: 70px;
+                    height: 34px;
+                    line-height: 34px;
+                    border-left: 1px solid #eee;
+                    border-right: 1px solid #eee;
+                    text-align: center;
+                    margin: 0 8px;
+                    color: #aaa;
+                }
+            }
+            .addcart{
+                float: left;
+                height: 50px;
+                line-height: 50px;
+                margin-left: 10px;
+                background-color: #6cae38;
+                border-radius: 2px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #fff;
+                margin-right: -2px;
+                z-index: 1;
+                cursor: Pointer;
+                padding: 0 20px; 
+                a{
+                    color: #fff;
+                }
+                i{
+                    font-size: 24px;
+                    color: #fff;
+                    padding-right: 15px;
+                }
+            }
+            .btn_list{
+                float: left;
+                text-align: center;
+                padding: 0 20px;
+                height: 48px;
+                border: 1px solid #eee;
+                @include borderradius(2px);
+                color: #ccc;
+                i{
+                    margin-top: 5px;
+                    display: block;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #ccc;
+                }
+            }
+        }
+    }
+}

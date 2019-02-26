@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>山姆会员商店-注册</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://security.samsclub.cn/front-passport/passport/images/sam/logo.png" alt="">
+                </a>
+            </div>
+            <div class="title">
+                <span>欢迎注册</span>
+            </div>
+        </div>
+    </header>
+    <div class="reg">
+        <div class="vip clear">
+            <a class="active" href="javscript:;">
+                <em class="iconfont"></em>
+                <b>暂无会员卡</b>
+                <span><i class="iconfont"></i></span>
+            </a>
+            <a href="javscript:;">  <!-- 点击加边框  #0799c9;-->
+                <em class="iconfont"></em>
+                <b>已有会员卡</b>
+                <span><i class="iconfont"></i></span>
+            </a>
+        </div>
+        <div id="register">
+            <form action="">
+                <div class="regsiter_name">
+                    <input class="reg_input" type="text" name="username" placeholder="用户名">
+                    <p>4-20位字符，可由中文、英文、数字</p>
+                </div>
+                <div class="vip_reg">
+                    <div class="regsiter_vip">
+                        <input class="reg_input" type="text" name="username" placeholder="17位会员卡号">
+                        <p>找不到会员卡号？</p>
+                    </div>
+                    <div class="regsiter_vip">
+                        <select name="year"  id="">
+                            <option value="">入会年份</option>
+                            <option value="">2019</option>
+                            <option value="">2018</option>
+                            <option value="">2017</option>
+                            <option value="">2016</option>
+                            <option value="">2015</option>
+                        </select>
+                        <select name="month"  id="">
+                            <option value="">月</option>
+                            <option value="">2019</option>
+                            <option value="">2018</option>
+                            <option value="">2017</option>
+                            <option value="">2016</option>
+                            <option value="">2015</option>
+                        </select>
+                        <select name="day"  id="">
+                            <option value="">日</option>
+                            <option value="">2019</option>
+                            <option value="">2018</option>
+                            <option value="">2017</option>
+                            <option value="">2016</option>
+                            <option value="">2015</option>
+                        </select>
+                        <p>找不到入会年份？</p>
+                    </div>
+                </div>
+                <div class="regsiter_email">
+                    <input class="reg_input" type="text" name="email" placeholder="邮箱地址">
+                    <p>请输入常用邮箱，可用作登录账户，接受订单通知和找回密码之用</p>
+                </div>
+                <div class="regsiter_pwd">
+                    <input class="reg_input" type="password" name="password" placeholder="设置密码">
+                    <p class="pwd_left">6-20位字符,可由大小写英文,数字或符号'-,'_'组成</p>
+                    <div class="default_strong">
+                        密码强度：
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                    </div>
+                </div>
+                <div class="regsiter_pwd">
+                    <input class="reg_input" type="password"  placeholder="确认密码">
+                    <p></p>
+                </div>
+                <div class="regsiter_pwd">
+                    <input class="reg_input" type="text"  placeholder="您的手机号">
+                    <p></p>
+                </div>
+                <div class="register_code">
+                    <input class="vali_code reg_input" type="text" placeholder="验证码">
+                    <a href="javascript:;">验证码</a>
+                </div>
+                <p></p>
+                <div class="reg_footer">
+                    <p><label><input checked type="checkbox">订阅优惠消息</label></p>
+                    <p><label><input checked type="checkbox">我已阅读并同意<a href="#">《山姆网站使用协议》</a></label></p>
+                </div>
+                <input class="onsubmit" type="submit" value="提交">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+@mixin borderstyle($borderwidth:1px,$borderstyle:solid,$bordercolor:#ccc) {
+    border: $borderwidth $borderstyle $bordercolor;
+}

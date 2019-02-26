@@ -1,0 +1,36 @@
+@mixin trangle($type: '', $border-value-1: 50px, $border-value-2: 50px, $border-color...) {
+    width: 0;
+    height: 0;
+
+    @if $border-color !='' {
+        @if $type=='triangleUp' {
+            border-left: $border-value-1 solid transparent;
+            border-right: $border-value-2 solid transparent;
+            border-bottom: solid $border-color;
+        }
+
+        @if $type=='triangleDown' {
+            border-left: $border-value-1 solid transparent;
+            border-right: $border-value-2 solid transparent;
+            border-top: solid $border-color;
+        }
+
+        @if $type=='triangleLeft' {
+            border-top: $border-value-1 solid transparent;
+            border-bottom: $border-value-2 solid transparent;
+            border-right: solid $border-color;
+        }
+
+        @if $type=='triangleRight' {
+            border-top: $border-value-1 solid transparent;
+            border-left: solid $border-color;
+            border-bottom: $border-value-2 solid transparent;
+        }
+    }
+
+    @else {
+        border-left: $border-value-1 solid transparent;
+        border-right: $border-value-2 solid transparent;
+        border-bottom: solid $border-color;
+    }
+}

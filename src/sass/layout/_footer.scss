@@ -1,0 +1,40 @@
+.footer{
+    margin-top: 15px;
+    background-color: #ebebeb;
+    border-top: 30px #e6e6e6 solid;
+    a{
+        color: #333;
+        &:hover{
+            color: #0069aa;
+        }
+    }
+    dl{
+        float: left;
+        width: 14%;
+        margin-right: 3px;
+        line-height: 30px;
+        margin-top: -30px;
+        padding-bottom: 30px;
+        color: #333;
+        &:nth-child(1){
+            text-align: center; 
+        }
+        dt{
+            margin-bottom: 10px;
+        }
+    }
+    img{
+        display: inline-block;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+    }
+    .footer_copyright{
+        text-align: center;
+        padding-bottom: 40px;
+        p{
+            line-height: 25px;
+            color: #333;
+        }
+    }
+}

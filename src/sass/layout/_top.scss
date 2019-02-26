@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+$line-heght:33px;
+@mixin borderstyle($width:1px,$style:solid,$color:#ccc) {
+    border: $width $style $color;
+}
+
+.top{
+    height: 33px;
+    background-color: #0069aa;
+    border-bottom: 1px solid #005c9d;
+    .wrapper{
+        width: 1500px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .clear{
+        @include clear;
+    }
+    div {
+        color: #a5c7db;
+     } 
+    .welcome{              //左边
+        float: left;
+        position: relative;
+        .line{
+            padding: 0 5px;
+            font-style: normal;
+            line-height: $line-heght;
+        }
+        a{
+            color: #fff;
+            transition: all 0.3s;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    .login_info{              //左边
+        float: left;
+        position: relative;
+        line-height: 34px;
+        a{
+            color: #fff;
+            transition: all 0.3s;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.top_nav{            //右边小导航
+    ul{
+        position: absolute;
+        right: 0;
+    }
+    &>ul>li{
+        float: left;
+        margin-top: 4px;
+        line-height: $line-heght;
+        position: relative;
+        @include borderstyle(1px,solid ,transparent);
+        @include transition(all 0.3s);
+        i{
+            margin-left: 5px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        &:hover{
+            background:#015c92;
+            @include borderstyle(1px,solid ,#015789 );
+            >a{
+                color: white;
+                i{
+                    color: white;
+                    transform: rotate(180deg);
+                }
+            }
+        &:hover .list{display: block}
+            
+        }
+        a{
+            width: 68px;
+            height: 24px;
+            line-height: 24px;
+            display: block;
+            padding: 0 10px;
+        }
+        
+    } 
+    .trangle{        //三角形
+        border-width: 0 6px 6px;
+        border-bottom-color: #fff;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        overflow: hidden;
+        top: -6px;
+        left: 50%;
+        margin-left: -6px;
+        color: transparent;
+    }
+    .list{
+        display: none;
+        position: absolute;
+        z-index: 100;
+        top:33px;
+        right: -5px!important;
+        background: #fff;
+        right: 0;
+        padding: 10px 0;
+        @include borderstyle(1px,solid ,#ccc );
+    }  
+    .list a{
+        width: 80px;
+        color: #555;
+        line-height: 24px;
+        &:hover{
+            color: #015c92;
+        }
+    }
+
+    
+    .qrcode img{
+       margin: 5px 8px;
+       width: 82px;
+       height: 82px;
+    }
+    .qrcode {
+        width: 200px;
+        height: 117px;
+       li{
+        float: left;
+        text-align: center;
+        p{
+            line-height: 16px;
+        }
+        } 
+        .trangle{
+            left: 75%;
+        }
+    }
+    
+}
