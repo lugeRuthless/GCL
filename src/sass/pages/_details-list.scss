@@ -28,10 +28,10 @@ body{
         float: left;
         margin-right: 20px;
         .up{
-            left: 11px;
+            left: 4px;
         }
         .down{
-            left: 40px;
+            left: 32px;
         }
         >a{  
             position: absolute;
@@ -47,10 +47,10 @@ body{
     }
     .smallimg{
         float: $fl;
-        width: 65px;
+        width: 55px;
         margin-right: 18px;
         text-align: center;
-        height: 450px;
+        height: 355px;
         overflow: hidden;
         position: relative;
         ul{
@@ -59,31 +59,32 @@ body{
            // overflow: hidden;
         }
         li{
-            width: 63px;
-            height: 63px;
+            width: 47px;
+            height: 47px;
             overflow: hidden;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             cursor: pointer;
             img{
-                width: 63px;
-                height: 63px;
+                width: 47px;
+                height: 47px;
             }
         }
         .active{
-            width: 61px;
-            height: 61px;
+            width: 46px;
+            height: 46px;
             border: 2px solid #0069aa;
             img{
-                width: 61px;
-                height: 61px;
+                width: 46px;
+                height: 46px;
             }
         }
     }
     .smallpic{
         float: $fl;
-        width: 500px;
-        height: 500px;
+        width:400px;
+        height: 400px;
+        @include clear();
         position: relative;
         .show{
             opacity: 1!important;
@@ -102,11 +103,12 @@ body{
             height: 100px; */
         }
         .small-pics{
+            float: left;
             margin-right: 15px;
             overflow: hidden;
             img{
-                width: 500px;
-                height: 500px;
+                width: 400px;
+                height: 400px;
             }
             li{
                 position: absolute;
@@ -118,14 +120,18 @@ body{
     }
     .bigf{
         opacity: 0;
-        width: 500px;
-        height: 500px;
+        display: none;
+        //background-color: white;
+        width: 400px;
+        height: 400px;
         position: absolute;
-        left: 600px;
+        left: 480px;
         z-index: 20;
         overflow: hidden;
         img{
             position: absolute;
+            width: 800px;
+            height: 800px;
             top: 0;
             left: 0
         }
@@ -179,7 +185,7 @@ body{
             }
         }
         float: left;
-        width: 56%;
+        width: 50%;
         box-sizing: border-box;
         .title{
             line-height: 22px;

@@ -40,6 +40,30 @@ header .logo .title span {
   margin-left: -45px;
   font-size: 20px; }
 
+.weak em:nth-of-type(1) {
+  background-color: #5dbcfa !important; }
+
+.medium em:nth-of-type(1) {
+  background-color: #5dbcfa !important; }
+.medium em:nth-of-type(2) {
+  background: #3d9fdf !important; }
+
+.strong em:nth-of-type(1) {
+  background-color: #5dbcfa !important; }
+.strong em:nth-of-type(2) {
+  background: #3d9fdf !important; }
+.strong em:nth-of-type(3) {
+  background: #1b84c8 !important; }
+
+.verystrong em:nth-of-type(1) {
+  background-color: #5dbcfa !important; }
+.verystrong em:nth-of-type(2) {
+  background: #3d9fdf !important; }
+.verystrong em:nth-of-type(3) {
+  background-color: #5dbcfa !important; }
+.verystrong em:nth-of-type(4) {
+  background: #006aaf !important; }
+
 .reg {
   text-align: center;
   width: 440px;
@@ -73,6 +97,9 @@ header .logo .title span {
   display: block;
   font-size: 40px;
   color: #0799c9; }
+.reg .vip .active {
+  border: 2px solid #0799c9;
+  background: #fff; }
 .reg .vip .active span {
   display: block; }
 .reg .vip span {
@@ -163,10 +190,12 @@ header .logo .title span {
   color: #fff;
   height: 50px;
   line-height: 50px;
-  background: #005f9e;
+  background: #006aaf;
   border-radius: 3px;
   font-weight: bold;
   font-size: 18px;
   margin: 20px 0; }
+.reg .onsubmit:hover {
+  background: #005f9e; }
 
 /*# sourceMappingURL=register.css.map */

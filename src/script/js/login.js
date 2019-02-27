@@ -1,19 +1,21 @@
-define(['config'],function(){
+define(['config','cookie'],function(config,cookie){
     require(['jquery'],function(){
         return {
             validate:(function(){
-                $('input').on('focus',function(){
+                var $url="http://10.31.162.11:8088/samsclub/php/";
+                $('input').not('input:last').on('focus',function(){
                     $(this).css('border-color','#00abdd');
                 });
-                $('input').on('blur',function(){
+                $('input').not('input:last').on('blur',function(){
                     $(this).css('border-color','#dcdcdc');
                 });
-                $('.btn_login').on('click',function(){
 
+
+                $('.btn_login').on('click',function(){
                     if($('.username').val()!='' && $('.pwd').val()!=''){
                          $.ajax({
                             type: "post",
-                            url: "http://10.31.162.11:8088/samsclub/php/login.php",
+                            url: $url+"login.php",
                             data: {
                                 username:$('.username').val(),
                                 pwd:$('.pwd').val()
@@ -24,16 +26,19 @@ define(['config'],function(){
                                 $('.username').css('border-color','red');
                             
                             }else{
-                                //成功跳转主页
+                                cookie.addcookie('name',$('.username').val(),7);
+                                $('.btn_login').val('正在提交请求').css('background','#aaa');
+                                setTimeout(function(){
+                                    location.href='index.html';
+                                },3000);
+                                
                             }
                         });
-                    }else if($('username').val()=='' || $('pwd').val()==''){
+                    }else{
                         $('.warning').html('请填写账号名或密码');
-                     
-                    }
-                   
+                    }      
                 });
-            })()
+            })() 
         };
     });
 });

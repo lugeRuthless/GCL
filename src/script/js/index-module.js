@@ -27,7 +27,7 @@
 }); */
 
 define(['config','header'],function(){
-    require(['jquery'],function($,lazy){
+    require(['jquery','cookie'],function($,cookie){
         require(['jqlazy'],function(){
             return {
                 lunbo :(function(){
@@ -97,7 +97,7 @@ define(['config','header'],function(){
                                     <div class="item">
                                         <a href="details.html?sid=${value.sid}" title="${value.title}">
                                             <div class="img-border">
-                                                <img  class="lazy"  data-original="${value.url}" width="270" height="270" alt="">
+                                                <img  class="lazy"  data-original="${value.url}"  alt="">
                                             </div>
                                             <p><u class="jsd_tag"></u>${value.title}</p>
                                             <span><em>￥</em>${value.price}</span>

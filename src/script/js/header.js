@@ -1,4 +1,4 @@
-define(['config'],function(){
+define(['config','cookie'],function(config,cookie){
     require(['jquery'],function(){  
         $(function(){        //请求页面并加载网页头部的效果
             $('._header').load('header.html', function () {
@@ -44,6 +44,39 @@ define(['config'],function(){
                     $box.html(str);
                     });
                 });
+                //登录
+                ;(function(){
+                  // console.log(new Date());
+                  var now = new Date();
+                  var hour = now.getHours();
+                    if (hour < 6) {
+                        $('.time').find('span').html("凌晨好！")
+                    } else if (hour < 9) {
+                         $('.time').find('span').html("早上好！")
+                    } else if (hour < 12) {
+                         $('.time').find('span').html("上午好！")
+                    } else if (hour < 14) {
+                         $('.time').find('span').html("中午好！")
+                    } else if (hour < 17) {
+                         $('.time').find('span').html("下午好！")
+                    } else if (hour < 19) {
+                         $('.time').find('span').html("傍晚好！")
+                    } else if (hour < 22) {
+                         $('.time').find('span').html("晚上好！")
+                    } else {
+                         $('.time').find('span').html("夜里好！")
+                    }
+                    if(cookie.getcookie('name')){
+                        $('.login_info').find('a:first').html(cookie.getcookie('name'));
+                        $('.login_info').show();
+                        $('.welcome').hide();
+                    }
+                    $('.close').on('click',function(){
+                       cookie.delcookie('name'); 
+                       $('.welcome').show();
+                       $('.login_info').hide();                     
+                    });
+                })();
             });
             $('._footer').load('footer.html', function () {});
         });     

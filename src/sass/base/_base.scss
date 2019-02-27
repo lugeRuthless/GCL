@@ -19,7 +19,10 @@ i,b,em{
 }
 
 .wrapper{
-	width: 1500px;
+	//width:90%;
+	//max-width: 1500px;
+	width: 1200px;
+	min-width: 1200px;
 	margin: 0 auto;
 	color: #a5c7db;
 }

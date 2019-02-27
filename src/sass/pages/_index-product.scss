@@ -191,9 +191,13 @@
     }
     .left_img{
         float: $fl;
+        width: 28%;
+        img{
+            width: 100%;
+        }
     }
     .right_kitchen{
-        margin-left: 480px;
+        margin-left: 28%;
         h1{
             text-align: left;
             margin-left: 20px;
@@ -218,12 +222,12 @@
         text-align: center;
         img{
             width: 90%;
-            height: 152px;
+            height: 100px;
             margin-left: 5%;
             //margin-left: 10px;
         }
         li{
-            width: 244px;
+            width: 25%;
             float: $fl;
             h4{
                 font-size: 14px;
@@ -319,8 +323,12 @@
         margin-top: 10px;
         li{
             float: left;
+            width: 33%;
+            img{
+                width: 90%;
+            }
             &:nth-child(2){
-                margin: 0 15px;
+                margin: 0 5px;
             }
         }
     }

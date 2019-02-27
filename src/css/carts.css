@@ -18,7 +18,8 @@ i, b, em, .cart_list .cart_list_footer .btn_price #price_all strong {
   font-style: normal; }
 
 .wrapper {
-  width: 1500px;
+  width: 1200px;
+  min-width: 1200px;
   margin: 0 auto;
   color: #a5c7db; }
 
@@ -51,7 +52,6 @@ h1, h2, h3, h4, h5 {
   background-color: #0069aa;
   border-bottom: 1px solid #005c9d; }
 .top .wrapper {
-  width: 1500px;
   margin: 0 auto;
   position: relative; }
 .top .clear::after {
@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5 {
 .nav li a {
   color: #fff;
   display: block;
-  padding: 0 30px;
+  padding: 0 20px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -442,9 +442,16 @@ h1, h2, h3, h4, h5 {
 body {
   background: #fff; }
 
-#delete {
-  display: none;
+.mask_cart {
   position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background: rgba(51, 51, 51, 0.7); }
+
+#delete {
+  position: absolute;
   padding: 10px 40px;
   padding-top: 30px;
   background: #fff;
@@ -639,6 +646,8 @@ body {
   height: 90px;
   padding: 20px 0;
   border-top: 1px solid #efefef; }
+.cart_list .cart_list_data:nth-of-type(1) {
+  display: none !important; }
 .cart_list .cart_list_data > div {
   height: 90px;
   text-align: center; }
@@ -656,7 +665,12 @@ body {
 .cart_list .cart_list_data .cart_title a {
   float: left; }
 .cart_list .cart_list_data .cart_title h6 {
-  float: left; }
+  float: left;
+  width: 200px; }
+.cart_list .cart_list_data .cart_title h6 a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 .cart_list .cart_list_data .cart_num .calc {
   display: inline-block;
   width: 100px;
@@ -710,10 +724,12 @@ body {
   text-align: center;
   margin-top: 10px;
   float: left;
-  width: 48px;
+  padding: 0 10px;
   height: 60px;
   padding: 0 10px;
   line-height: 20px; }
+.cart_list .cart_list_footer .info_footer li span {
+  display: block; }
 .cart_list .cart_list_footer .info_footer li:nth-child(1) {
   margin-left: 50px;
   width: 60px;

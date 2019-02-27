@@ -18,7 +18,8 @@ i, b, em {
   font-style: normal; }
 
 .wrapper {
-  width: 1500px;
+  width: 1200px;
+  min-width: 1200px;
   margin: 0 auto;
   color: #a5c7db; }
 
@@ -51,7 +52,6 @@ h1, h2, h3, h4, h5 {
   background-color: #0069aa;
   border-bottom: 1px solid #005c9d; }
 .top .wrapper {
-  width: 1500px;
   margin: 0 auto;
   position: relative; }
 .top .clear::after {
@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5 {
 .nav li a {
   color: #fff;
   display: block;
-  padding: 0 30px;
+  padding: 0 20px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -461,9 +461,9 @@ body {
   float: left;
   margin-right: 20px; }
 .details .detail_left .up {
-  left: 11px; }
+  left: 4px; }
 .details .detail_left .down {
-  left: 40px; }
+  left: 32px; }
 .details .detail_left > a {
   position: absolute;
   bottom: 40px;
@@ -475,37 +475,44 @@ body {
   color: #ababab; }
 .details .smallimg {
   float: left;
-  width: 65px;
+  width: 55px;
   margin-right: 18px;
   text-align: center;
-  height: 450px;
+  height: 355px;
   overflow: hidden;
   position: relative; }
 .details .smallimg ul {
   position: absolute;
   /* height: 450px; */ }
 .details .smallimg li {
-  width: 63px;
-  height: 63px;
+  width: 47px;
+  height: 47px;
   overflow: hidden;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   cursor: pointer; }
 .details .smallimg li img {
-  width: 63px;
-  height: 63px; }
+  width: 47px;
+  height: 47px; }
 .details .smallimg .active {
-  width: 61px;
-  height: 61px;
+  width: 46px;
+  height: 46px;
   border: 2px solid #0069aa; }
 .details .smallimg .active img {
-  width: 61px;
-  height: 61px; }
+  width: 46px;
+  height: 46px; }
 .details .smallpic {
   float: left;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   position: relative; }
+.details .smallpic::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden; }
 .details .smallpic .show {
   opacity: 1 !important;
   z-index: 5; }
@@ -521,11 +528,12 @@ body {
   /*  width: 100px;
    height: 100px; */ }
 .details .smallpic .small-pics {
+  float: left;
   margin-right: 15px;
   overflow: hidden; }
 .details .smallpic .small-pics img {
-  width: 500px;
-  height: 500px; }
+  width: 400px;
+  height: 400px; }
 .details .smallpic .small-pics li {
   position: absolute;
   top: 0;
@@ -533,19 +541,22 @@ body {
   opacity: 0; }
 .details .bigf {
   opacity: 0;
-  width: 500px;
-  height: 500px;
+  display: none;
+  width: 400px;
+  height: 400px;
   position: absolute;
-  left: 600px;
+  left: 480px;
   z-index: 20;
   overflow: hidden; }
 .details .bigf img {
   position: absolute;
+  width: 800px;
+  height: 800px;
   top: 0;
   left: 0; }
 .details .detail_right {
   float: left;
-  width: 56%;
+  width: 50%;
   box-sizing: border-box; }
 .details .detail_right #alert {
   position: fixed;

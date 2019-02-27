@@ -15,7 +15,7 @@ define(function(){
 			}
 		},
 		delcookie:function(key){
-			addcookie(key,'',-1);
+			this.addcookie(key,'',-1);
 		}
 	}
 });

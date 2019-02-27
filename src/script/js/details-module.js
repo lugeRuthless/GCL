@@ -6,7 +6,7 @@
     
 });  */
 define(['config','header','cookie'],function(config,header,cookie){ //数据库中提取数据渲染
-    console.log();
+    //console.log();
     require(['jquery'],function(){
         var $sid=location.search.substring(1).split('=')[1];
         //console.log($sid);
@@ -88,13 +88,14 @@ define(['config','header','cookie'],function(config,header,cookie){ //数据库�
                         $h=$(this).height()-that.$smallf.height();
                     }
                     // console.log($w,$h);
+                  
                     that.$smallf.offset({
                         left:($w+$(this).offset().left),
                         top :($h+$(this).offset().top)
                     });
                     that.$bigpic.offset({
-                        left: 800+(-$w*that.$bili),
-                        top: 214+(-$h*that.$bili)
+                        left: that.$bigf.offset().left+(-$w*that.$bili),
+                        top: that.$bigf.offset().top+(-$h*that.$bili)
                     });
                 });
                 this.$smallimg.on('mouseenter','li',function(){  
@@ -131,7 +132,7 @@ define(['config','header','cookie'],function(config,header,cookie){ //数据库�
                     this.$smallimg.find('ul').stop(true).animate({
                         top:-($('.smallimg').find('li').outerHeight(true)*this.$num)
                     });
-                    console.log(this.$num);
+                   // console.log(this.$num);
                 }
             }
                

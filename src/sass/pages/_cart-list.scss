@@ -3,9 +3,18 @@
 body{
     background: #fff;
 }
-#delete{
-    display: none;
+.mask_cart{
     position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background: rgba($color: #333, $alpha: 0.7)
+    
+}
+#delete{
+   // display: none;
+    position: absolute;
     padding: 10px 40px;
     padding-top: 30px;
     background: #fff;
@@ -238,7 +247,10 @@ body{
             height: 14px;
         }
     }
-    .cart_list_data{
+    .cart_list_data{ 
+        &:nth-of-type(1){
+            display: none!important;
+        }
         height: 90px;
         padding: 20px 0;
         border-top: 1px solid #efefef;
@@ -269,6 +281,10 @@ body{
             }
             h6{
                 float: left;
+                width: 200px;
+               a{
+                   @include ellipsis();
+               } 
             }
         }
         .cart_num{
@@ -339,7 +355,11 @@ body{
                 text-align: center;
                 margin-top: 10px;
                 float: left;
-                width: 48px;
+                //width: 48px;
+                padding: 0 10px;
+                span{
+                    display: block;
+                }
                 height: 60px;
                 padding: 0 10px;
                 line-height: 20px;

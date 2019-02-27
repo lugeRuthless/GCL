@@ -1,1 +1,1 @@
-require(['index-module','details-module','cart-module','login']);
+require(['index-module','details-module','cart-module','login','register']);
