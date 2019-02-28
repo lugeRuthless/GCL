@@ -45,7 +45,7 @@ define(['config','header'],function(){
                                 $num=0;
                             }
                             change();
-                        },4000);
+                        },5000);
                     });
                     $btns.on('click',function(){
                         $num=$(this).index();
@@ -58,7 +58,7 @@ define(['config','header'],function(){
                             $num=0;
                             }
                         change();
-                    },4000);
+                    },5000);
     
                     function change(){
                         $btns.eq($num).addClass('active').siblings('li').removeClass('active');
@@ -82,10 +82,11 @@ define(['config','header'],function(){
                         }
                     });
                 })(),
-                productList:(function(){    
+                productList:(function(){   
+                    var $url='http://10.31.162.11:8088/samsclub/php/'; 
                     $.ajax({
                         type: "get",
-                        url: "http://10.31.162.11:8088/samsclub/php/productList.php",
+                        url: $url+ "productList.php",
                         dataType: "json",
                     }).done(function(data){
                         var strhtml='';

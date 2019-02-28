@@ -4,7 +4,7 @@
     require 'conn.php';
     if(isset($_POST['username']) && isset($_POST['pwd'])){
         $username=$_POST['username'];
-        $password=$_POST['pwd'];
+        $password=sha1($_POST['pwd']);
 
         $result=mysql_query("select * from users where username='$username' and password='$password'");
         if(mysql_fetch_array($result)){

@@ -202,9 +202,19 @@ h1, h2, h3, h4, h5 {
   line-height: 67px; }
 .header .toutiao div {
   float: left; }
+.header .toutiao i {
+  display: none; }
+.header .toutiao .lunboact {
+  display: inline-block; }
 .header .toutiao ul {
+  height: 65px;
   float: left; }
 .header .toutiao ul li {
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: none;
   margin-left: 5px;
   word-break: break-all; }
 .header .toutiao ul li a {
@@ -270,6 +280,7 @@ h1, h2, h3, h4, h5 {
   background: none; }
 .header_right .cart {
   float: left;
+  text-align: center;
   margin-left: 35px;
   margin-right: 10px;
   margin-top: 5px;
@@ -278,9 +289,10 @@ h1, h2, h3, h4, h5 {
   font-size: 34px; }
 .header_right .cart span:nth-child(2) {
   font-size: 16px;
+  text-align: center;
   color: #ffc222;
   position: absolute;
-  left: 10px;
+  left: 6px;
   top: 8px; }
 
 #mask {
@@ -668,6 +680,8 @@ body {
   float: left;
   width: 200px; }
 .cart_list .cart_list_data .cart_title h6 a {
+  display: block;
+  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }

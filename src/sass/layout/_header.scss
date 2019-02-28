@@ -53,9 +53,17 @@ $line-height:67px;
         div{
             float: $fl;
         }
+        i{display: none;}
+        .lunboact{
+            display: inline-block;
+        }
         ul{
+            height: 65px;
             float: $fl;
             li{
+                width: 150px;
+                @include ellipsis();
+                display: none;
                 margin-left: 5px;
                 word-break: break-all;
                 a{
@@ -130,6 +138,7 @@ $line-height:67px;
     }
     .cart{       //购物车
         float: $fl;
+        text-align: center;
         margin-left: 35px;
         margin-right: 10px;
         margin-top:5px;
@@ -139,9 +148,10 @@ $line-height:67px;
         }
         span:nth-child(2){
             font-size: 16px;
+            text-align: center;
             color: #ffc222;
             position: absolute;
-            left: 10px;
+            left: 6px;
             top: 8px;
         }
     }

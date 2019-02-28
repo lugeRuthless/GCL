@@ -9,9 +9,10 @@ define(['config','header','cookie'],function(config,header,cookie){ //数据库�
     //console.log();
     require(['jquery'],function(){
         var $sid=location.search.substring(1).split('=')[1];
+        var $url='http://10.31.162.11:8088/samsclub/php/';
         //console.log($sid);
         $.ajax({
-            url: 'http://10.31.162.11:8088/samsclub/php/details.php',
+            url: $url+"details.php",
             data:{
                 sid:$sid
             },
@@ -149,18 +150,31 @@ define(['config','header','cookie'],function(config,header,cookie){ //数据库�
            $numarr=cookie.getcookie('cookienum').split(',');
        }
        $('.addcart .caaat').on('click',function(){
-           if($.inArray($sid,$sidarr)){
-             $sidarr.push($sid);
-             $numarr.push($num.val());
-             cookie.addcookie('cookiesid',$sidarr.toString(),7);
-             cookie.addcookie('cookienum',$numarr.toString(),7);
-           }else{
-               var $newnum=parseInt($num.val())+parseInt($numarr[$.inArray($sid,$sidarr)]);
-               $numarr[$.inArray($sid,$sidarr)]=$newnum;
-               cookie.addcookie('cookienum',$numarr.toString(),7);
-           }
-           $('#alert').show();
+            $('#alert').show();
+            $('#alert .btn_close').on('click',function(){  //弹框
+                $('#alert').hide();
+            });
+            $('#alert .cancel').on('click',function(){//加入
+                cart();
+            });
+            $('#alert .watch').on('click',function(){      //加入
+                cart();
+            });
+           
        });
+       function cart() {
+           if ($.inArray($sid, $sidarr)==-1) {
+               $sidarr.push($sid);
+               $numarr.push($num.val());
+               cookie.addcookie('cookiesid', $sidarr.toString(), 7);
+               cookie.addcookie('cookienum', $numarr.toString(), 7);
+           } else {
+               var $newnum = parseInt($num.val()) + parseInt($numarr[$.inArray($sid, $sidarr)]);
+               $numarr[$.inArray($sid, $sidarr)] = $newnum;
+               console.log($numarr);
+               cookie.addcookie('cookienum', $numarr.toString(), 7);
+           }
+       }
        $num.on('keyup',function(){  //表单输入数字
            $(this).val($(this).val().replace(/[^0-9]/g,''));
        });

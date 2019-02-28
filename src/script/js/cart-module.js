@@ -1,9 +1,10 @@
 define(['config','header'],function(){
     require(['jquery','cookie'],function($,cookie){
+        var $url='http://10.31.162.11:8088/samsclub/php/';
             function productlist($sid,$num){
                // console.log(1);
                 $.ajax({
-                    url:"http://10.31.162.11:8088/samsclub/php/productlist.php",
+                    url:$url+"productlist.php",
                     dataType:'json'
                 }).done(function(data){
                     //console.log(data);
@@ -14,7 +15,7 @@ define(['config','header'],function(){
                              value.weight=value.weight.substring(3)
                              var cloneProdutlist=$('.cart_list_data:hidden').clone(true,true);
                              cloneProdutlist.find('.cart_title img').attr('src',value.url);
-                             cloneProdutlist.find('.goods-pic img').attr('sid',value.sid);
+                             cloneProdutlist.find('.cart_title img').attr('sid',value.sid);
                              cloneProdutlist.find('.cart_title .title_sid').html(value.title);
                              cloneProdutlist.find('.cart_price').html(value.price);
                              cloneProdutlist.find('.cart_weight').html(value.weight);
@@ -29,18 +30,23 @@ define(['config','header'],function(){
             }
 
             $('.icon-light').on('click',function(){
-                $('.tips').find('p').hide(200);
+               if(!$('.tips').find('p:hidden').length){
+                    $('.tips').find('p').hide(200);
+               }else{
+                    $('.tips').find('p').show(200);
+               }
             });
             
-
+           
             if(cookie.getcookie('cookiesid') && cookie.getcookie('cookienum')){
                 var $sid=cookie.getcookie('cookiesid').split(',');
                 var $num=cookie.getcookie('cookienum').split(','); //获取cookie
-
+                //console.log($sid,$num);
                 $.each($sid,function(index,value){
                     productlist($sid[index],$num[index]);
                 });
             }
+           
 
             $('.cart_list_header .shou').on('click',function(){
                 if($(this).html()=='收起'){
@@ -119,7 +125,7 @@ define(['config','header'],function(){
     				addvalue=99;
     			}
                 $(this).parents('.cart_list_data').find('.cart_num input').val(addvalue);
-                console.log($(this).parents('.cart_list_data').find('.cart_num input').val(addvalue));
+               // console.log($(this).parents('.cart_list_data').find('.cart_num input').val(addvalue));
                 $(this).parents('.cart_list_data').find('.cart_sum strong').html(calcprice($(this)));
                 priceall();
                 changecookie($(this));
@@ -146,11 +152,12 @@ define(['config','header'],function(){
             var $sidarr=[];
             var $numarr=[];
             function cookieArray(){
-                if(cookie.getcookie('cookiesid') && cookie.getcookie('.cookienum')){
+                if(cookie.getcookie('cookiesid') && cookie.getcookie('cookienum')){
                     $sidarr=cookie.getcookie('cookiesid').split(',');
                     $numarr=cookie.getcookie('cookienum').split(',');
                 }
             }
+
             function changecookie(obj){  //存储新的数量
                 cookieArray();
                 var $sid=obj.parents('.cart_list_data').find('.cart_title img').attr('sid');
@@ -159,17 +166,26 @@ define(['config','header'],function(){
             }
 
             //删除操作
-            $('#list').on('click','.del_rows',function(){
+               
+            $('#list').on('click','.del_rows',function(){ 
+               
                 var $that=$(this);
+               // console.log($(this).parents('.cart_list_data').html());
+                //console.log($that.html());
                 $('.mask_cart').show();
                 $('.pop-close,.btn_cancel').on('click',function(){
                     $('.mask_cart').hide();
                 });
                 $('.btn_ok').on('click',function(){
-                    
+                    console.log($sidarr);
+                    //console.log($sidarr)
+                    console.log($that.parents('.cart_list_data').html()); 
+                    console.log($sidarr,$sid);
+                    deletecookie($that.parents('.cart_list_data').find('.cart_title img').attr('sid'));
                     $that.parents('.cart_list_data').remove();
-                    deletecookie($(this).parents('.cart_list_data').find('.cart_title img').attr('sid'));
+                   // deletecookie($that.parents('.cart_list_data').find('.cart_title img').attr('sid'));
                     $('.mask_cart').hide();
+                    priceall();
                     empty();
                 });
             });
@@ -186,14 +202,20 @@ define(['config','header'],function(){
                             deletecookie($(this).find('.cart_title img').attr('sid'));
                         }
                     });
-                    $('.mask_cart').hide();
+                    priceall();
                     empty();
+                    $('.mask_cart').hide();
+                   
+                   
+                    
                 });
             });
+            
             
             function deletecookie($sid){
                 cookieArray();
                 var $index=$.inArray($sid,$sidarr);
+                 
                 $sidarr.splice($index,1);
                 $numarr.splice($index,1);
                 cookie.addcookie('cookiesid',$sidarr.toString(),7)

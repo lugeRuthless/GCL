@@ -10,7 +10,6 @@ define(['config','cookie'],function(config,cookie){
                     $(this).css('border-color','#dcdcdc');
                 });
 
-
                 $('.btn_login').on('click',function(){
                     if($('.username').val()!='' && $('.pwd').val()!=''){
                          $.ajax({
@@ -22,8 +21,9 @@ define(['config','cookie'],function(config,cookie){
                             },
                         }).done(function(data){
                             if(!data){
+                               // $('.username').css('border-color','red');
                                 $('.warning').html('账号和密码不匹配,请重新输入');
-                                $('.username').css('border-color','red');
+                                //$('.username').css('border-color','red');
                             
                             }else{
                                 cookie.addcookie('name',$('.username').val(),7);

@@ -2,6 +2,7 @@ define(['config','cookie'],function(config,cookie){
     require(['jquery'],function(){  
         $(function(){        //请求页面并加载网页头部的效果
             $('._header').load('header.html', function () {
+                var $url='http://10.31.162.11:8088/samsclub/php/';
                 var $subnav=$('.nav .subnav');
                 var $address=$('.chgadress .module');
                 var $search=$('.header_right .search input');
@@ -19,6 +20,29 @@ define(['config','cookie'],function(config,cookie){
                     $subnav.eq($(this).index()).hide();
                 });
 
+                //购物车数量
+                setInterval(function(){
+                    if (cookie.getcookie('cookiesid')) {
+                        var shangpinnum = cookie.getcookie('cookienum').split(',');
+                        var numhtml = 0;
+                        $.each(shangpinnum, function (index, value) {
+                            numhtml += parseInt(value);
+                        });
+                        $('.cart .shangpin').text(parseInt(numhtml));
+                    }
+                },30);
+               
+            var timer=setInterval(function(){
+                     $('.toutiao li:first,.toutiao i:first').toggleClass('lunboact').next().toggleClass('lunboact');
+                    },3000);
+              $('.toutiao ul').hover(function(){
+                  clearInterval(timer);
+              },function(){
+                 timer=setInterval(function(){
+                    $('.toutiao li:first,.toutiao i:first').toggleClass('lunboact').next().toggleClass('lunboact');
+                   },3000);
+              },3000)
+                
                 //搜索引擎
                 $search.blur(function(){
                     $box.hide();

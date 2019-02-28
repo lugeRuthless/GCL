@@ -200,7 +200,9 @@ header{
                     width: 35%;
                     height: 38px;
                     color: #ccc;
+                    border-radius: 2px;
                     background: #eee;
+                    transition: all 0.3s;
                 }
         }  
     }
@@ -222,6 +224,7 @@ header{
         background: #006aaf;
         border-radius: 3px;
         font-weight: bold;
+        transition: all 0.3s;
         font-size: 18px;
         margin: 20px 0;
         &:hover{

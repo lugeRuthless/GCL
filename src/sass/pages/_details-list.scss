@@ -140,7 +140,8 @@ body{
         #alert{
             position: fixed;
             top: 50%;
-            left: 50%;
+            left: 51%;
+            z-index: 2000;
             display: none;
             margin-left: -135px;
             margin-top: -105px;

@@ -6,6 +6,8 @@ const uglify=require('gulp-uglify');
 const rename=require('gulp-rename');
 const watch=require('gulp-watch');//添加此插件进行监听
 const imagemin = require('gulp-imagemin');//图片压缩插件
+const babel=require('gulp-babel');
+const es2015=require('babel-preset-es2015');
 
 //1.新建gulp任务
 /*gulp.task('taskname',function(){//taskname:任务名称，如果任务名称设置为default，执行的时候，只需要gulp
@@ -38,15 +40,30 @@ gulp.task('uglifyhtml',function(){
 
 
 //5.合并压缩js
-gulp.task('alljs',function(){
-	return gulp.src('src//script/js/*.js')
-	//.pipe(concat('all.js'))//合并以及重命名
+gulp.task('alljs',function(){  //合并
+	return gulp.src('src/script/js/*.js')
+	.pipe(concat('main.js'))//合并以及重命名
+	.pipe(gulp.dest('dist/script/js'))//输出
+	/* .pipe(rename('main.min.js'))//重命名
+	.pipe(uglify())//压缩
+	.pipe(gulp.dest('dist/script/js/')); */
+});
+
+gulp.task('minjs',function(){   //压缩
+	return gulp.src('src/script/js/*.js')
+	//.pipe(concat('main.js'))//合并以及重命名
 	//.pipe(gulp.dest('dist/script/js'))//输出
-	//.pipe(rename('all.min.js'))//重命名
+	.pipe(rename('main.min.js'))//重命名
+	.pipe(babel({presets:[es2015]}))
 	.pipe(uglify())//压缩
 	.pipe(gulp.dest('dist/script/js/'));
 });
 
+gulp.task('requirejs',function(){
+	return gulp.src('src/script/thirdplugins/*.js')
+	.pipe(uglify())
+	.pipe(gulp.dest('dist/script/thirdplugins/'))
+});
 
 //6.图片的压缩--png
 //如果插件安装不成功，可以在清除缓存之后继续按照 npm cache clean --force
